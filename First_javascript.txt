@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+
+/* This is the function that gets 
+called when the user clicks the
+button on the main page */
+
+function displayAnswer()
+{
+document.write("Just 24 1-hour lessons!");
+}
+</script>
+</head>
+<body>
+
+<h1> My First Program <h1>
+<p id="demo">How long will it take for me to learn to program?</p>
+
+<button type="button" onclick="displayAnswer()">How many hours?</button>
+
+</body>
+</html>
