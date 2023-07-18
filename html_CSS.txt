@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Using styles</title>
+<style>
+	body
+	{
+		background-color:pink;
+	}
+	 h1
+	{
+		color:orange;
+		text-align:center;
+	}
+	 p.ex1 {color:red; font-family:Georgia; font-size:20px;}
+	 p.ex2 {color:blue; font-family:Courier; font-size:24px;}
+	 p.ex3 {color:green; font-size:8px;}
+</style>

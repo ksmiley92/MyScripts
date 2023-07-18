@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Resume Photos!</title>
+	<script>
+
+	//First, create an array of images to rotate
+	var resphotos = new Array();
+	resphotos[0] = new Image();
+	resphotos[0].src = "MTSU_library_lights.jpg";
+	resphotos[1] = new Image();
+	resphotos[1].src = "FtLauderdale_conquest.jpg";
+	resphotos[2] = new Image();
+	resphotos[2].src = "MSU_campus.jpg";
+	resphotos[3] = new Image();
+	resphotos[3].src = "MTSU_library.jpg";
+	resphotos[4] = new Image();
+	resphotos[4].src = "NOLA";
+	resphotos[5] = new Image();
+	resphotos[5].src = "MTSU_sign.jpg";
+
+	var i=0;
+	function rotator()  {
+		document.getElementbyId("image1").src = resphotos[i].src;
+		i++;
+		if (i==resphotos.length)  {
+			i = 0;
+		}
+		setTimeout(function()  { rotator(); }, 2000);
+	}
+
+	</script>
+</head>
+<body onload = "rotator('image1', resphotos);" >
+<h1>FAMILY PHOTO TIME</h1>
+Here are the photos from my resume portfolio...
+<div id="img"> <img id="image1" height="600px" width="400px"
+	border="5" style="border-color:white;" /></div>
+</body>
+</html>

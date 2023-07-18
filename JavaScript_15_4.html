@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Product Information</title>
+    <script>
+        //Set the scrolling message, and you can add as many
+        //pieces as you want
+        var scrollMsg = "We are open Daily from 9am to 10pm...";
+        scrollMsg += "We've got the largest variety of products";
+        scrollMsg += "in the tri-state area...";
+        scrollMsg += "Our prices will not be beat!...";
+        //Our three product information
+        //functions
+        function Product1Info() {
+            alert("Summer product! On sale until Labor Day for $9.99.");
+        }
+        function Product2Info() {
+            alert("One of our bestsellers! A bargain at $19.50.");
+        }
+        function Product3Info() {
+            alert("Everyone could use one of these at $1.99!");
+        }
+
+        //The scrolling function
+        var beginPos = 0;
+        function scrollingMsg() {
+            document.msgForm.scrollingMsgBox.value = scrollMsg.substring(beginPos, scrollMsg.length) + scrollMsg.substring(0, beginPos);
+            beginPos = beginPos + 1;
+            if (beginPos > scrollMsg.length) {
+                beginPos = 0
+            }
+
+            window.setTimeout("scrollingMsg()", 90)
+        }
+
+    </script>
+
+</head>
+
+<body BGCOLOR="WHITE" onload="scrollingMsg()">
+    <h1>Fran's Place<br>Shop our inventory</h1>
+    We've got everything you need!<br>
+
+    <img src="TPAC.jpg" height="300px" width="200px" border="5" style="border-color:blue;"
+        onmouseover="Product1Info()" />
+    </div>
+    <img src="FtLauderdale_conquest.jpg" height="300px" width="200px" border="5" style="border-color:red;"
+        onmouseover="Product2Info()" /></div>
+    <img src="MTSU_library.jpg" height="300px" width="200px" border="5" style="border-color:#2de069;"
+        onmouseover="Product3Info()" />
+    </div>
+    <form name="msgForm">
+        <input type="text" name="scrollingMsgBox" size="88">
+    </form>
+
+    <p>&nbsp;</p>
+    <p><b>Thanks for shopping at Fran's Place</b>.</p>
+
+
+</body>
+
+</html>

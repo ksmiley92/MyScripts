@@ -1,0 +1,54 @@
+Code snippets
+
+
+Create new folder in folder
+
+import os
+
+# specify the path to the directory
+directory_path = "path/to/directory"
+
+# loop through all subdirectories in the specified directory
+for subdir in os.listdir(directory_path):
+    # check if the item is a subdirectory
+    if os.path.isdir(os.path.join(directory_path, subdir)):
+        # create a new folder within the subdirectory
+        new_folder = os.path.join(directory_path, subdir, "new_folder_name")
+        os.makedirs(new_folder)
+
+
+# Try on only the first one:
+import os
+
+# specify the path to the directory
+directory_path = "path/to/directory"
+
+# get the first subdirectory in the specified directory
+subdirs = [os.path.join(directory_path, d) for d in os.listdir(directory_path) if os.path.isdir(os.path.join(directory_path, d))]
+if len(subdirs) > 0:
+    first_subdir = subdirs[0]
+    # create a new folder within the first subdirectory
+    new_folder = os.path.join(first_subdir, "new_folder_name")
+    os.makedirs(new_folder)
+
+
+# Copy a file from one place to another using a search by wildcard string
+import os
+import shutil
+
+# specify the source directory and the search string
+source_dir = "path/to/source/directory"
+search_string = "*.txt"
+
+# specify the destination directory
+dest_dir = "path/to/destination/directory"
+
+# loop through all files in the source directory that match the search string
+for file in os.listdir(source_dir):
+    if fnmatch.fnmatch(file, search_string):
+        # construct the full path to the source file and destination file
+        source_file = os.path.join(source_dir, file)
+        dest_file = os.path.join(dest_dir, file)
+        # copy the file to the destination directory
+        shutil.copyfile(source_file, dest_file)
+
