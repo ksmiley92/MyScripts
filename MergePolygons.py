@@ -44,7 +44,7 @@ fc = arcpy.management.CreateFeatureclass(outgdb, outName
 featureList = arcpy.ListFeatureClasses()
 #print(fileList)
 
-# Append the parcel shapefiles to the new feature class
+# Append the fcs to the new feature class
 for feature in featureList:
     arcpy.AddMessage("Adding features to the new feature class")
     arcpy.management.Append(featureList, fc)

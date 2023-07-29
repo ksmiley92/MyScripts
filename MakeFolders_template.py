@@ -15,14 +15,14 @@
 import os
 
 # specify the path to the directory
-directory_path = r"Path"
+directory_path = r"C:\TN_Compliance_Review_2023\Docs\FinalMaps\2023"
 
 # get the first subdirectory in the specified directory
 subdirs = [os.path.join(directory_path, d) for d in os.listdir(directory_path) if os.path.isdir(os.path.join(directory_path, d))]
 if len(subdirs) > 0:
     first_subdir = subdirs[0]
     # create a new folder within the first subdirectory
-    new_folder = os.path.join(first_subdir, "My folder")
+    new_folder = os.path.join(first_subdir, "Employee Tracts")
     if os.path.exists(new_folder):
         raise ValueError(f"Folder {new_folder} already exists")
     os.makedirs(new_folder)
@@ -34,14 +34,14 @@ if len(subdirs) > 0:
 import os
 
 # specify the path to the directory
-directory_path = r"Path"
+directory_path = r"C:\TN_Compliance_Review_2023\Docs\FinalMaps\2023"
 
 # loop through all subdirectories in the specified directory
 for subdir in os.listdir(directory_path):
     # check if the item is a subdirectory
     if os.path.isdir(os.path.join(directory_path, subdir)):
         # create a new folder within the subdirectory
-        new_folder = os.path.join(directory_path, subdir, "My folder")
+        new_folder = os.path.join(directory_path, subdir, "Customer Tracts")
         if os.path.exists(new_folder):
             raise ValueError(f"Folder {new_folder} already exists")
         os.makedirs(new_folder)
@@ -50,14 +50,14 @@ for subdir in os.listdir(directory_path):
 import os
 
 # specify the path to the directory
-directory_path = r"Path"
+directory_path = r"C:\TN_Compliance_Review_2023\Docs\FinalMaps\2023"
 
 # loop through all subdirectories in the specified directory
 for subdir in os.listdir(directory_path):
     # check if the item is a subdirectory
     if os.path.isdir(os.path.join(directory_path, subdir)):
         # create a new folder within the subdirectory
-        new_folder = os.path.join(directory_path, subdir, "My folder")
+        new_folder = os.path.join(directory_path, subdir, "Employee Tracts")
         if os.path.exists(new_folder):
             os.rmdir(new_folder)
 
