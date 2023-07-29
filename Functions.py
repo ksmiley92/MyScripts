@@ -29,6 +29,34 @@ def currentfunction(argl):
 # parameter2 = arcpy.GetParameterAsText(1)
 # parameter3 = arcpy.GetParamterAsText(2)
 
+# Function for exporting a dataset to a csv
+def createCSV(data, csvname, mode='ab'):
+    with open(csvname, mode) as csvfile:
+        csvwriter = csv.writer(csvfile, delimiter=',')
+        csvwriter.writerow(data)
+    
+# function for exporting a .xls
+# Use with Python 2.7
+def generateXLS(dataset, sheetName, fileName):
+    import xlwt
+    workbook = xlwt.Workbook()
+    sheet = workbook.add_sheet(sheetName)
+    for YCOUNTER, data in enumerate(dataset):
+        for XCOUNTER, value in enumerate(data):
+            sheet.write(YCOUNTER,XCOUNTER, value)
+        workbook.save(fileName)
+        
+# function for exporting a .xlsx
+# use with Python 3.x
+def generateXLSX(dataset, sheetName, fileName):
+    import xlsxwriter
+    workbook = xlsxwriter.Workbook()
+    sheet = workbook.add_sheet(sheetName)
+    for YCOUNTER, data in enumerate(dataset):
+        for XCOUNTER, value in enumerate(data):
+            sheet.write(YCOUNTER,XCOUNTER, value)
+        workbook.save(fileName)
+
 
 # Function for viewing a feature class or GDB tablein ArcPro using notebooks
 # Views first 5 records
