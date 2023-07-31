@@ -31,6 +31,7 @@ def currentfunction(argl):
 
 # Function for exporting a dataset to a csv
 def createCSV(data, csvname, mode='ab'):
+    import csv
     with open(csvname, mode) as csvfile:
         csvwriter = csv.writer(csvfile, delimiter=',')
         csvwriter.writerow(data)
