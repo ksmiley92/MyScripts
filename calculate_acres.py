@@ -1,8 +1,8 @@
 ﻿# calculate_acres.py
 # Author: David Meranus
 # Date: 091223
-# Description: Tool that zips multiple shapefiles (or other files) by user-selected input in a GP tool in ArcGIS Pro
-# Notes: designed for people to ZIP shapefiles by browsing to them so they can upload them into the web
+# Description: Tool that calculates acres for polygon shapefile or feature class and displays the acres on the map
+# Notes: does not work on a non-editable layer, such as state-configured portal layers
 # v2
 # modified by Kyle Smiley
 # included block that will modify the first label expression in the layer and display
