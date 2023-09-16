@@ -2,7 +2,7 @@
 # Author: David Meranus
 # Date: 091223
 # Description: Tool that calculates acres for polygon shapefile or feature class and displays the acres on the map
-# Notes: does not work on a non-editable layer, such as state-configured portal layers
+# Notes: does not work on a non-editable layer, such as state-configured portal layers. Calc is in the units of the input layer's coordinate system
 # v2
 # modified by Kyle Smiley
 # included block that will modify the first label expression in the layer and display
