@@ -6,6 +6,7 @@
 # v2
 # modified by Kyle Smiley
 # included block that will modify the first label expression in the layer and display
+# modified variable name for input layer
 
 ## Import packages ##
 import arcpy
