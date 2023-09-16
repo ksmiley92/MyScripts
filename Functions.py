@@ -29,13 +29,20 @@ def currentfunction(argl):
 # parameter2 = arcpy.GetParameterAsText(1)
 # parameter3 = arcpy.GetParamterAsText(2)
 
-# Function for exporting a dataset to a csv
-def createCSV(data, csvname, mode='ab'):
+# Function for exporting a dataset to a csv in Python 3.x
+def createCSV(data, csvname, mode='w'):
     import csv
-    with open(csvname, mode) as csvfile:
+    with open(csvname, mode, newline = '') as csvfile:
         csvwriter = csv.writer(csvfile, delimiter=',')
         csvwriter.writerow(data)
     
+# Function for exporting a dataset to a csv in Pyhon 2.7
+def createCSVpy2(data, csvname, mode='ab'):
+    import csv
+    with open(csvname, mode) as csvfile:
+        csvwriter = csv.writer(csvfile, delimiter=',')
+        csvwriter.writerow(data)    
+        
 # function for exporting a .xls
 # Use with Python 2.7
 def generateXLS(dataset, sheetName, fileName):
@@ -48,7 +55,7 @@ def generateXLS(dataset, sheetName, fileName):
         workbook.save(fileName)
         
 # function for exporting a .xlsx
-# use with Python 3.x
+# use with Python 3.11+
 def generateXLSX(dataset, sheetName, fileName):
     import xlsxwriter
     workbook = xlsxwriter.Workbook()
