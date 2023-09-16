@@ -17,10 +17,6 @@ arcpy.env.overwriteOutput = True
 ## Insert Tool parameters ##
 inlayer = arcpy.GetParameterAsText(0)
 
-## Set Project ##
-#aprx = arcpy.mp.ArcGISProject("CURRENT")
-#arcpy.AddMessage(aprx)
-
 ## Add Total_Acres field to selected layer ##
 arcpy.management.AddField(inlayer, "Tot_Acres", "FLOAT")
 arcpy.AddMessage("Adding tot_acres field to the attribute table")
