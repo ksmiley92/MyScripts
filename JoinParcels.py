@@ -10,18 +10,13 @@
 # --------------------------------------------------------------------------
 #
 # This code will join parcels fcs from a gdb with their respective tables in another gdb
-# There must be an equal number of parcels features and parcels tables in their respective geodatabases
-# Hard-coded to join parcels from TN comptroller. If distribution of data changes, the field names and names may
-# Need to be edited.
 
-# Import libraries
 import arcpy
 import os
 
-#Define workspace and parameters
-featureGDB = arcpy.GetParameterAsText(0)
-tableGDB = arcpy.GetParameterAsText(1)
-arcpy.env.overwriteOutput = True
+#Define Gdb path
+featureGDB = "C:/GIS_Tools/TN_Parcels_Tools_Pro/Parcels_features.gdb"
+tableGDB = "C:/GIS_Tools/TN_Parcels_Tools_Pro/Parcels_tables.gdb"
 
 #Create Feature List Variable
 arcpy.env.workspace = featureGDB

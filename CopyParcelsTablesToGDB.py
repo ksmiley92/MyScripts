@@ -3,7 +3,7 @@
 # --------------------------------------------------------------------------
 # --------------------------------------------------------------------------
 # Template.py
-# Version: 0.2
+# Version: 0.1
 # Date: 8/22/2023
 # Original Author: Kyle Smiley
 # --------------------------------------------------------------------------
@@ -13,17 +13,10 @@
 
 #Do the same, but for tables
 # Edit code to exclude the Logfile and rename with same name as Parcels features.
-
-# Import libraries
 import arcpy
 import os
-
-#Set workspace and parameters
-arcpy.env.overwriteOutput = True
-workspace = arcpy.GetParameterAsText(0)  # DataType = folder
-outgdb = arcpy.GetParameterAsText(1)  # DataType = workspace
-
-# Copy the tables to the gdb
+workspace = "C:/GIS_Tools/TN_Parcels_Tools_Pro/Counties"
+outgdb = "C:/GIS_Tools/TN_Parcels_Tools_Pro/Parcels_tables.gdb"
 walk = arcpy.da.Walk(workspace, datatype = "Table")
 for dirpath, dirnames, filenames in walk:
     for file in filenames:
